@@ -1,74 +1,74 @@
-# Minhas Finanças
+# Finance App
 
-App pessoal e local para registrar gastos e recebimentos, ver o saldo e projetar os próximos 6 ou 12 meses.
+A personal, local-first web app to track income and expenses, view your balance, and project the next 6 or 12 months.
 
-## O que você precisa
+## Requirements
 
-- [Node.js](https://nodejs.org/) (já instalado no seu PC)
+- [Node.js](https://nodejs.org/)
 
-## Como rodar
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abra o endereço que aparecer no terminal (geralmente `http://localhost:5173`).
+Open the URL shown in the terminal (usually `http://localhost:5173`).
 
-## Abrir no celular (mesma Wi‑Fi)
+## Open on your phone (same Wi‑Fi)
 
-1. PC e celular na **mesma rede Wi‑Fi**.
-2. No PC, na pasta do projeto:
+1. Keep your PC and phone on the **same Wi‑Fi network**.
+2. On your PC, in the project folder:
 
 ```bash
 npm run dev:mobile
 ```
 
-3. No terminal, procure a linha **Network** — algo como `http://192.168.1.10:5173/`.
-4. No celular, abra o Chrome/Safari e digite esse endereço (use o IP do **seu** PC, não esse exemplo).
+3. In the terminal, find the **Network** line — e.g. `http://192.168.1.10:5173/`.
+4. On your phone, open Chrome/Safari and enter that address (use **your** PC’s IP, not the example).
 
-**Achar o IP no Windows** (se o terminal não mostrar):
+**Find your IP on Windows** (if the terminal does not show Network):
 
 ```bash
 ipconfig
 ```
 
-Use o **Endereço IPv4** da rede Wi‑Fi (ex.: `192.168.0.15`). No celular: `http://192.168.0.15:5173`
+Use the Wi‑Fi **IPv4 Address** (e.g. `192.168.0.15`). On your phone: `http://192.168.0.15:5173`
 
-**Firewall:** na primeira vez o Windows pode pedir permissão para o Node — marque redes **privadas** e permita.
+**Firewall:** Windows may ask to allow Node on first run — allow on **private** networks.
 
-**Dados:** o que você lançar no celular fica no navegador do celular; o do PC fica no PC (são separados).
+**Data:** entries on your phone stay in the phone’s browser; entries on your PC stay on the PC (they are separate).
 
-Para testar o build (sem hot reload) na rede:
+To test the production build on your network (no hot reload):
 
 ```bash
 npm run build
 npm run preview:mobile
 ```
 
-## Como funciona
+## Features
 
-- **Menu Lançamentos**: formulários, tabelas de receitas e gastos, saldo.
-- **Menu Projeção**: tabela 6/12 meses com filtros por tipo (recebimento/gasto) e categoria.
-- **Dois formulários**: um só para recebimentos e outro só para gastos.
-- **Duas tabelas**: receitas (positivo) e gastos (negativo), separadas.
-- **Categorias**: Moradia, Alimentação, Salário, etc.
-- **Fixo vs variável**: fixo repete na projeção todo mês; variável conta só no mês da data que você informou.
-- **Projeção**: 6 ou 12 meses, com colunas para receita/gasto fixo e variável.
-- **Dados**: ficam no `localStorage` do navegador — só na sua máquina.
+- **Entries**: forms, separate income and expense tables, balance summary.
+- **Projection**: 6- or 12-month table with filters by type (income/expense) and category.
+- **Two forms**: one for income, one for expenses.
+- **Two tables**: income (positive) and expenses (negative), kept separate.
+- **Categories**: housing, food, salary, etc. (UI labels in Portuguese).
+- **Fixed vs variable**: fixed items repeat every month in projections; variable items count only in the month of the date you set.
+- **Projection columns**: fixed/variable income and expenses per month.
+- **Storage**: `localStorage` in the browser — no server, no account.
 
 ## Scripts
 
-| Comando        | Descrição                    |
-|----------------|------------------------------|
-| `npm run dev`  | Desenvolvimento no PC (localhost) |
-| `npm run dev:mobile` | Desenvolvimento acessível pelo IP na Wi‑Fi |
-| `npm run build`| Gera pasta `dist` estática   |
-| `npm run preview` | Testa o build no PC |
-| `npm run preview:mobile` | Testa o build pelo IP na Wi‑Fi |
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Dev server on PC (localhost) |
+| `npm run dev:mobile` | Dev server reachable on your LAN IP |
+| `npm run build` | Build static assets to `dist/` |
+| `npm run preview` | Preview build on PC |
+| `npm run preview:mobile` | Preview build on your LAN IP |
 
-## Stack (propositalmente simples)
+## Stack
 
 - TypeScript + Vite
 - Tailwind CSS
-- Sem React, sem backend, sem publicação
+- No React, no backend
